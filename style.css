@@ -1,0 +1,441 @@
+:root{
+  --mainBorder: #ff8397;
+  --secundBorder: #c1cac5;
+  --secundBackground:#f2f5f3;
+  --navBackground:#6b7770;
+  --textColor:#fff;
+}
+html,body{
+    padding: 0%;
+    margin: 0%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+body {
+    position: relative
+  }
+
+        /* secBackground#f2f5f3    border#ff8397  2border#c1cac5 font#6b7770 */
+
+h1,h2,h3,h4,h5,h6,strong,span{
+    font-family: 'Roboto Mono', monospace;
+}
+#f{
+    color: var(--mainBorder);
+    font-weight: bold;
+}
+
+h1 {font-size: 56px;}
+h2 {font-size: 36px;}
+h3 {font-size: 28px;}
+h4 {font-size: 24px;}
+h5 {font-size: 20px;}
+h6 {font-size: 16px;}
+
+p,li,span,label,input,textarea{
+    font-weight: 500;
+    font-family: 'Roboto Mono', monospace;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+li{
+    display: inline;
+    padding: 0 20px 0 20px;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+section{
+    overflow: auto;
+    width: 90%;
+    margin: 0 auto;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    background-color:var(--navBackground);
+    color: var(--textColor);
+    letter-spacing: 3px;
+    font-weight: bold;
+    border-top: 5px solid var(--mainBorder);
+}
+nav.fixed{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+.burger{
+    display: none;
+    cursor: pointer;
+}
+.burger div{
+    width: 25px;
+    height: 2px;
+    margin: 5px;
+    background-color: var(--textColor);
+    transition: all 0.3s ease;
+}
+
+.main{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background:url(images/pro-pic.jpg) ;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-attachment: fixed;
+    border-bottom: 20px solid var(--mainBorder);
+    /* clip-path: circle(180vh at 50% -80vh);  */
+}
+.main-wrapper{
+    max-width: 1000px;
+    font-size: 5rem;
+    color: var(--textColor);
+    font-weight: 700;
+}
+#pro-pic{
+    width: 300px;
+    margin: auto;
+    object-fit: cover;
+    border: 2px solid var(--secundBorder);
+}
+.abut-wrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 320px);
+    justify-content: center;
+    gap: 100px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+.preview{
+    background-color:rgba(46, 49, 49, .5);
+    width: 100%;
+    margin: auto;
+    padding: 5px;
+    border: solid 5px var(--mainBorder);
+    overflow-y: hidden;
+}
+.skills-wrapper{
+  display: flex;
+  justify-content:space-around;
+  gap: 30px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  border-top: solid 5px var(--secundBorder);
+}
+.skills-info{
+  padding-left: 40px;
+}
+.chart{
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+.chart-skills {
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
+  }
+.chart-skills *,
+.chart-skills::before {
+  box-sizing: border-box;
+}
+.chart-skills {
+    position: relative;
+    width: 350px;
+    height: 175px;
+    overflow: hidden;
+}
+  
+.chart-skills::before,
+.chart-skills::after {
+    position: absolute;
+}
+  
+.chart-skills::before {
+    content: '';
+    width: inherit;
+    height: inherit;
+    border: 45px solid rgba(211, 211, 211, .3);
+    border-bottom: none;
+    border-top-left-radius: 175px;
+    border-top-right-radius: 175px;
+  }
+  
+.chart-skills::after {
+    content: 'Top Skills';
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: cadetblue;
+}
+  
+.chart-skills li {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    border: 45px solid;
+    border-top: none;
+    border-bottom-left-radius: 175px;
+    border-bottom-right-radius: 175px;
+    transform-origin: 50% 0;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    animation-fill-mode: forwards;
+    animation-duration: .4s;
+    animation-timing-function: linear;
+}
+  
+.chart-skills li:nth-child(1) {
+    z-index: 4;
+    border-color: #ff8397;
+    animation-name: rotate-one;
+}
+  
+.chart-skills li:nth-child(2) {
+    z-index: 3;
+    border-color: #e44a64;
+    animation-name: rotate-two;
+    animation-delay: .4s;
+}
+  
+.chart-skills li:nth-child(3) {
+    z-index: 2;
+    border-color: #a81b32;
+    animation-name: rotate-three;
+    animation-delay: .8s;
+}
+  
+.chart-skills li:nth-child(4) {
+    z-index: 1;
+    border-color: #f7052d;
+    animation-name: rotate-four;
+    animation-delay: 1.2s;
+}
+  
+.chart-skills span {
+    position: absolute;
+    font-size: .85rem;
+    backface-visibility: hidden;
+    animation: fade-in .4s linear forwards;
+}
+  
+.chart-skills li:nth-child(1) span {
+    top: 5px;
+    left: 10px;
+    transform: rotate(-21.6deg);
+}
+  
+.chart-skills li:nth-child(2) span {
+    top: 20px;
+    left: 10px;
+    transform: rotate(-79.2deg);
+    animation-delay: .4s;
+}
+  
+.chart-skills li:nth-child(3) span {
+    top: 18px;
+    left: 10px;
+    transform: rotate(-140.4deg);
+    animation-delay: .8s;
+}
+  
+.chart-skills li:nth-child(4) span {
+    top: 10px;
+    left: 10px;
+    transform: rotate(-180deg);
+    animation-delay: 1.2s;
+}
+.contact{
+  overflow: auto;
+  width: 100%;
+  margin: 0 auto;
+  background: var(--secundBackground)!important;
+  border-top: solid 10px var(--secundBorder);
+}
+.line{
+  display:block;
+  margin:25px
+}
+.line h4{
+  text-align:center;
+  border-bottom:5px solid var(--secundBorder);
+  position:relative; 
+}
+.line h4 span { 
+  background-color: var(--secundBackground);
+  position: relative;
+  top: 15px;
+  text-transform: uppercase;
+  padding: 0 10px;
+  color: var(--secundBorder);
+}
+.media{
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  margin-bottom: 50px;
+  margin-top: 100px;
+}
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 40px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 5px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-envelope {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+
+
+
+
+
+@media only screen and (max-width: 700px) {
+    .main {
+      background-image: url('images/pro-pic2.jpg');
+    }
+  }
+
+@media only screen and (max-width:700px) {
+    body {
+        overflow-x: hidden;
+      }
+    .nav-links{
+        position: absolute;
+        z-index: 1;
+        right: 0;
+        height: 500px;
+        top: 8vh;
+        background:rgba(0, 0, 0, .8);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        width: 30%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    .nav-links li{
+        opacity: 0;
+    }
+    .burger{
+        display: block;
+    }
+  }
+  .nav-active{
+    transform: translateX(0%);
+    overflow-x: hidden;
+  }
+
+  @keyframes navLinksFade{
+      from{
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to{
+        opacity: 1;
+        transform: translateX(0px);
+      }
+  }
+.toggle .line-1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line-2{
+    opacity: 0;
+}
+.toggle .line-3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
+
+@media only screen and (max-width: 840px) {
+  .skills-wrapper {
+    display:flex;
+    flex-wrap: wrap;
+  }
+}
+
+/* CHART ANIMATIONS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+@keyframes rotate-one {
+  100% {
+    transform: rotate(21.6deg);
+  }
+}
+
+@keyframes rotate-two {
+  0% {
+    transform: rotate(21.6deg);
+  }
+  100% {
+    transform: rotate(79.2deg);
+  }
+}
+
+@keyframes rotate-three {
+  0% {
+    transform: rotate(79.2deg);
+  }
+  100% {
+    transform: rotate(140.4deg);
+  }
+}
+
+@keyframes rotate-four {
+  0% {
+    transform: rotate(140.4deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes fade-in {
+  0%,
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
